@@ -11,7 +11,7 @@
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-  background: #101c28;
+  background: #202124;
   color: #fff;
 }
 
@@ -38,11 +38,6 @@
 
   .board {
     width: 70%;
-    background: #6c7884;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
     gap: 2px;
-    margin-bottom: 20px;
   }
 }

@@ -79,9 +79,11 @@ function App() {
 
   return (
     <div className="App">
-      <div className={currentPlayer === "X" ? "first-player" : "second-player"}>
+      <span
+        className={currentPlayer === "X" ? "first-player" : "second-player"}
+      >
         {status}
-      </div>
+      </span>
       <div className="board">
         {squares.map((e, index) => (
           <Square

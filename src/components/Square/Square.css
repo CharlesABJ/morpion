@@ -1,5 +1,5 @@
 button {
-    background: #101c28;
+    background: #202124;
     border: none;
     aspect-ratio: 1/1;
     font-size: 6vw;
@@ -7,9 +7,17 @@ button {
 }
 
 button.first-player {
-    color: #2c3e50;
+    color: #f19766;
 }
 
 button.second-player {
-    color: #18bc9c;
+    color: #5daed6;
+}
+
+span.first-player {
+    color: #f19766;
+}
+
+span.second-player {
+    color: #5daed6;
 }
