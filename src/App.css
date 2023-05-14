@@ -32,3 +32,17 @@
   gap: 5px;
   margin-bottom: 20px;
 }
+
+@media screen and (max-width:739px) {
+
+
+  .board {
+    width: 70%;
+    background: #6c7884;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 20px;
+  }
+}
