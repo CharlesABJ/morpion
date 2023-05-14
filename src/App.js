@@ -4,7 +4,7 @@ import Square from "./components/Square/Square";
 
 function App() {
   const squares = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
+  let restartText = "";
   const [squareValues, setSquareValues] = useState(Array(9).fill(""));
   const currentPlayer =
     squareValues.filter((value) => value !== "").length % 2 === 0 ? "X" : "O";
@@ -44,10 +44,8 @@ function App() {
       squareValues[4] === "X" &&
       squareValues[6] === "X")
   ) {
-    status = `Le joueur X a gagné`;
-    setSquareValues(Array(9).fill(""));
-  }
-  if (
+    status = "Le joueur X a gagné";
+  } else if (
     (squareValues[0] === "O" &&
       squareValues[1] === "O" &&
       squareValues[2] === "O") ||
@@ -73,17 +71,34 @@ function App() {
       squareValues[4] === "O" &&
       squareValues[6] === "O")
   ) {
-    status = `Le joueur O a gagné`;
-    setSquareValues(Array(9).fill(""));
+    status = "Le joueur O a gagné";
   }
 
+  if (
+    squareValues.every((value) => value !== "") ||
+    status === "Le joueur X a gagné" ||
+    status === "Le joueur O a gagné"
+  ) {
+    restartText = "Rejouer";
+  }
+  if (
+    squareValues.every((value) => value !== "") &&
+    status === `C'est à ${currentPlayer} de jouer`
+  ) {
+    status = "Match nul";
+  }
+
+  const handleRestart = () => {
+    setSquareValues(Array(9).fill(""));
+  };
   return (
     <div className="App">
-      <span
-        className={currentPlayer === "X" ? "first-player" : "second-player"}
-      >
+      <p onClick={handleRestart} className="restart">
+        {restartText}
+      </p>
+      <p className={currentPlayer === "X" ? "first-player" : "second-player"}>
         {status}
-      </span>
+      </p>
       <div className="board">
         {squares.map((e, index) => (
           <Square

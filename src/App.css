@@ -15,12 +15,26 @@
   color: #fff;
 }
 
-.status-zone.first-player {
-  color: #2c3e50;
+p {
+  margin-bottom: 10px;
 }
 
-.status-zone.second-player {
-  color: #18bc9c;
+p.first-player {
+  color: #f19766;
+  transition: 0.3s all;
+}
+
+p.second-player {
+  color: #5daed6;
+}
+
+p.restart:hover {
+  cursor: pointer;
+}
+
+p.restart:hover {
+  color: #98a8b8;
+  transition: 0.3s all;
 }
 
 .board {
