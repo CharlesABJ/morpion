@@ -11,7 +11,11 @@ function App() {
   let status = `C'est à ${currentPlayer} de jouer`;
 
   const handleClick = (index) => {
-    if (squareValues[index] === "") {
+    if (
+      squareValues[index] === "" &&
+      status !== "Le joueur X a gagné" &&
+      status !== "Le joueur O a gagné"
+    ) {
       const updatedValues = [...squareValues];
       updatedValues[index] = currentPlayer;
       setSquareValues(updatedValues);
