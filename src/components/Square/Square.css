@@ -1,0 +1,15 @@
+button {
+    background: #101c28;
+    border: none;
+    aspect-ratio: 1/1;
+    font-size: 6vw;
+    cursor: pointer;
+}
+
+button.first-player {
+    color: #2c3e50;
+}
+
+button.second-player {
+    color: #18bc9c;
+}
