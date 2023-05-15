@@ -100,6 +100,7 @@ function App() {
       <div className="board">
         {squares.map((e, index) => (
           <Square
+            label={`Bouton ${e}`}
             className={
               squareValues[index] === "X" ? "first-player" : "second-player"
             }
