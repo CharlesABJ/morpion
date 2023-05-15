@@ -4,7 +4,7 @@ import Square from "./components/Square/Square";
 
 function App() {
   const squares = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  let restartText = "";
+  let restartText = "En cours";
   const [squareValues, setSquareValues] = useState(Array(9).fill(""));
   const currentPlayer =
     squareValues.filter((value) => value !== "").length % 2 === 0 ? "X" : "O";
@@ -97,12 +97,6 @@ function App() {
   };
   return (
     <div className="App">
-      <p onClick={handleRestart} className="restart">
-        {restartText}
-      </p>
-      <p className={currentPlayer === "X" ? "first-player" : "second-player"}>
-        {status}
-      </p>
       <div className="board">
         {squares.map((e, index) => (
           <Square
@@ -115,6 +109,16 @@ function App() {
           />
         ))}
       </div>
+
+      <p className={currentPlayer === "X" ? "first-player" : "second-player"}>
+        {status}
+      </p>
+      <p
+        onClick={handleRestart}
+        className={restartText === "Rejouer" ? "restart active" : "restart"}
+      >
+        {restartText}
+      </p>
     </div>
   );
 }

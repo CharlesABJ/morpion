@@ -8,7 +8,7 @@
   height: 100vh;
   padding: 50px;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #202124;
@@ -28,11 +28,16 @@ p.second-player {
   color: #5daed6;
 }
 
-p.restart:hover {
+p.restart {
   cursor: pointer;
+  visibility: hidden;
 }
 
-p.restart:hover {
+p.restart.active {
+  visibility: visible;
+}
+
+p.restart.active:hover {
   color: #98a8b8;
   transition: 0.3s all;
 }
@@ -44,7 +49,7 @@ p.restart:hover {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 @media screen and (max-width:739px) {
